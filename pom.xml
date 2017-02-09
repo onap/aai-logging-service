@@ -1,0 +1,189 @@
+<!--
+     ============LICENSE_START=======================================================
+     Common Logging Library
+     ================================================================================
+     Copyright (C) 2017 AT&T Intellectual Property. All rights reserved.
+     ================================================================================
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+     ============LICENSE_END=========================================================
+   -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.openecomp.aai.logging-service</groupId>
+    <artifactId>logging-service</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Common Logging Library</name>
+
+    <properties>
+        <repository.id>ecomp-nexus</repository.id>
+        <repository.name>ecomp-releases</repository.name>
+	<repository.url>https://ecomp-nexus:8443/repository/maven-releases</repository.url>
+        <snapShotRepository.id>ecomp-nexus</snapShotRepository.id>
+        <snapShotRepository.name>ecomp-snapshots</snapShotRepository.name>
+	<snapShotRepository.url>https://ecomp-nexus:8443/repository/maven-snapshots</snapShotRepository.url>
+        <checkstyle.config.location>google_checks.xml</checkstyle.config.location>
+    </properties>
+	
+    <scm>
+        <connection>scm:git:ssh://git@104.130.163.223:OpenECOMP/common-logging.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <modules>
+        <module>logging-api</module>
+        <module>eelf-logging</module>
+        <module>common-logging</module>
+    </modules>
+        
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.4.2</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.scm</groupId>
+                            <artifactId>maven-scm-provider-gitexe</artifactId>
+                            <version>1.8.1</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- Checkstyle plugin - used to report on compliance with -->
+                <!-- the Google style guide.                               -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <reportPlugins>
+                            <plugin>
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-checkstyle-plugin</artifactId>
+                                <version>2.17</version>
+                                <reportSets>
+                                    <reportSet>
+                                        <reports>
+                                            <report>checkstyle</report>
+                                        </reports>
+                                    </reportSet>
+                                </reportSets>
+                            </plugin>
+                        </reportPlugins>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+        <!-- blackduck maven plugin -->
+         <plugin>
+         	<groupId>com.blackducksoftware.integration</groupId>
+         	<artifactId>hub-maven-plugin</artifactId>
+         	<version>1.4.0</version>
+         	<inherited>false</inherited>
+         	<configuration>
+         		<hubProjectName>${project.name}</hubProjectName>
+         		<outputDirectory>${project.basedir}</outputDirectory>
+         		</configuration>
+         	<executions>
+         		<execution>
+         			<id>create-bdio-file</id>
+         			<phase>package</phase>
+         			<goals>
+         				<goal>createHubOutput</goal>
+         			</goals>
+         		</execution>
+         	</executions>
+         </plugin>
+         
+          <!-- license plugin -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>license-maven-plugin</artifactId>
+            <version>1.10</version>
+            <configuration>
+              <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+              <verbose>true</verbose>
+              <excludes>
+                <exclude>**.json</exclude>
+              </excludes>
+              <processStartTag>============LICENSE_START=======================================================</processStartTag>
+              <processEndTag>============LICENSE_END=========================================================</processEndTag>
+              <sectionDelimiter>================================================================================</sectionDelimiter>
+              <licenseName>apache_v2</licenseName>
+              <inceptionYear>2017</inceptionYear>
+              <organizationName>AT&amp;T Intellectual Property. All rights reserved.</organizationName>
+              <projectName>Common Logging Library</projectName>
+              <canUpdateCopyright>true</canUpdateCopyright>
+              <canUpdateDescription>true</canUpdateDescription>
+              <canUpdateLicense>true</canUpdateLicense>
+              <emptyLineAfterHeader>true</emptyLineAfterHeader>
+	      	  <roots>
+	      		<root>.</root>
+	      	  </roots>
+	      	  <extraExtensions>
+	      	  	<md>java</md>
+	      	  	<txt>java</txt>
+	      	  </extraExtensions>
+            </configuration>
+            <executions>
+              <execution>
+                <id>first</id>
+                <goals>
+                  <goal>update-file-header</goal>
+                </goals>
+                <phase>process-sources</phase>
+                <configuration>
+                  <licenseName>apache_v2</licenseName>
+                  <excludes>
+                    <exclude>*.json</exclude>
+                  </excludes>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+    </dependencies>
+    
+    <distributionManagement>
+    
+        <!--  Repository to publish RELEASE artifacts to. -->
+        <repository>
+            <id>${repository.id}</id>
+            <name>${repository.name}</name>
+            <url>${repository.url}</url>
+        </repository>
+        
+        <!-- Repository to publish SNAPSHOT artifacts to. -->
+        <snapshotRepository>
+            <id>${snapShotRepository.id}</id>
+            <name>${snapShotRepository.name}</name>
+            <url>${snapShotRepository.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

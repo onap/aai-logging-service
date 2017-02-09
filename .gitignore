@@ -1,0 +1,8 @@
+.classpath
+.project
+.settings/
+target/
+eelf-logging/debug-logs/
+eelf-logging/logs/
+blackDuckHubProjectVersionName.txt
+blackDuckHubProjectName.txt
