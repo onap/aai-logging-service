@@ -27,7 +27,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.openecomp.aai</groupId>
+    
     <artifactId>eelf-logging</artifactId>
     <name>EELF Logging Implementation</name>
 
@@ -35,7 +35,7 @@
 
 		<!-- Common logging API. -->
 		<dependency>
-			<groupId>org.openecomp.aai</groupId>
+			<groupId>org.openecomp.aai.logging-service</groupId>
 			<artifactId>logging-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>

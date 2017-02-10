@@ -27,13 +27,13 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.openecomp.aai</groupId>
+ 
     <artifactId>common-logging</artifactId>
     <name>Common Logging Distribution</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.openecomp.cl</groupId>
+            <groupId>org.openecomp.aai.logging-service</groupId>
 	    <artifactId>eelf-logging</artifactId>
 	    <version>${project.version}</version>
 	</dependency>
