@@ -22,6 +22,13 @@
 	<properties>
 		<checkstyle.config.location>google_checks.xml</checkstyle.config.location>
 		<nexusproxy>https://nexus.openecomp.org</nexusproxy>
+		<!-- Sonar Properties -->
+		<sonar.language>java</sonar.language>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.surefire.reportsPath>${project.build.directory}/surefire-reports</sonar.surefire.reportsPath>
+		<sonar.jacoco.reportPath>${project.build.directory}/coverage-reports/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.jacoco.reportMissing.force.zero>false</sonar.jacoco.reportMissing.force.zero>
+		<sonar.projectVersion>${project.version}</sonar.projectVersion>
 	</properties>
 
 
@@ -139,6 +146,31 @@
 					<stagingProfileId>176c31dfe190a</stagingProfileId>
 					<serverId>ecomp-staging</serverId>
 				</configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.codehaus.mojo</groupId>
+			  <artifactId>sonar-maven-plugin</artifactId>
+			  <version>3.2</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.jacoco</groupId>
+			  <artifactId>jacoco-maven-plugin</artifactId>
+			  <version>0.7.7.201606060606</version>
+			  <configuration>
+				<dumpOnExit>true</dumpOnExit>
+			  </configuration>
+			  <executions>
+				<execution>
+				  <id>jacoco-initialize-unit-tests</id>
+				  <goals>
+					<goal>prepare-agent</goal>
+				  </goals>
+				  <configuration>
+					<destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+					<!-- <append>true</append> -->
+				  </configuration>
+				</execution>
+			  </executions>
 			</plugin>
 		</plugins>
 	</build>
