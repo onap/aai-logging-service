@@ -29,6 +29,8 @@
 		<sonar.jacoco.reportPath>${project.build.directory}/coverage-reports/jacoco.exec</sonar.jacoco.reportPath>
 		<sonar.jacoco.reportMissing.force.zero>false</sonar.jacoco.reportMissing.force.zero>
 		<sonar.projectVersion>${project.version}</sonar.projectVersion>
+		<releases.path>content/repositories/releases/</releases.path>
+		<snapshots.path>content/repositories/snapshots/</snapshots.path>
 	</properties>
 
 
@@ -178,12 +180,12 @@
 		<repository>
 			<id>ecomp-releases</id>
 			<name>ECOMP Release Repository</name>
-			<url>${nexusproxy}/content/repositories/releases/</url>
+			<url>${nexusproxy}/${releases.path}</url>
 		</repository>
 		<snapshotRepository>
 			<id>ecomp-snapshots</id>
 			<name>ECOMP Snapshot Repository</name>
-			<url>${nexusproxy}/content/repositories/snapshots/</url>
+			<url>${nexusproxy}/${snapshots.path}</url>
 		</snapshotRepository>
 		<site>
 			<id>ecomp-javadoc</id>
