@@ -21,7 +21,7 @@
 
 	<properties>
 		<checkstyle.config.location>google_checks.xml</checkstyle.config.location>
-		<nexusproxy>https://nexus.openecomp.org</nexusproxy>
+		<nexusproxy>https://nexus.onap.org</nexusproxy>
 		<!-- Sonar Properties -->
 		<sonar.language>java</sonar.language>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
