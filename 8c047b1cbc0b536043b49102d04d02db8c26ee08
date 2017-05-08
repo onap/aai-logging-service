@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Manisha Aggarwal <ma9181@att.com>
+Submitted-by: Manisha Aggarwal <ma9181@att.com>
+Submitted-at: Mon, 08 May 2017 19:45:30 +0000
+Reviewed-on: http://gerrit.onap.org/r/3919
+Project: aai/logging-service
+Branch: refs/heads/release-1.0.0
