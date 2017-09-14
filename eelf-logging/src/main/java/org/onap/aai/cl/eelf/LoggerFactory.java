@@ -20,16 +20,16 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
 import com.att.eelf.configuration.EELFManager;
 
-import org.openecomp.cl.api.LogLine.LogLineType;
-import org.openecomp.cl.api.Logger;
-import org.openecomp.cl.api.LoggerFactoryInterface;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.onap.aai.cl.api.Logger;
+import org.onap.aai.cl.api.LoggerFactoryInterface;
+import org.onap.aai.cl.api.LogLine.LogLineType;
 
 /** This is an implementation of the {@link LoggerFactoryInterface} which
  * constructs a {@link Logger} implementation which is compatible with the EELF

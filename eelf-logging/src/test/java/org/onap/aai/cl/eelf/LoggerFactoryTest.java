@@ -19,13 +19,13 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import org.openecomp.cl.api.Logger;
-import org.openecomp.cl.eelf.LoggerFactory;
+import org.onap.aai.cl.api.Logger;
+import org.onap.aai.cl.eelf.LoggerFactory;
 
 /** This suite of tests is intended to exercise the basic functionality of the
  * {@link LoggerFactory}. */

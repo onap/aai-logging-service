@@ -20,9 +20,9 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.api;
+package org.onap.aai.cl.api;
 
-import org.openecomp.cl.mdc.MdcOverride;
+import org.onap.aai.cl.mdc.MdcOverride;
 
 /** Defines the common API which all Logger implementations must expose. */
 public interface Logger {

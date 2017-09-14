@@ -20,7 +20,7 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.mdc;
+package org.onap.aai.cl.mdc;
 
 import org.slf4j.MDC;
 

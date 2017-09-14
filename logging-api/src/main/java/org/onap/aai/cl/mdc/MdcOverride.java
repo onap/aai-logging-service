@@ -20,25 +20,27 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.mdc;
 
-import org.openecomp.cl.api.LogLine;
+import java.util.HashMap;
+import java.util.Map;
 
+/**
+ * This class stores a map of MDC context attribute/values which can be used to
+ * override the actual MDC context.
+ */
+public class MdcOverride {
+  private Map<String, String> overrides = new HashMap<String, String>();
 
-/** This class is used to help standardize how log lines are written and provide
- * profiling info. */
-public class ErrorLogLine extends LogLine {
+  public void addAttribute(String attr, String val) {
+    overrides.put(attr, val);
+  }
 
-  /** (non-Javadoc)
-   * @see org.openecomp.cl.api.LogLine#getFormattedLine()
-   */
-  public String getFormattedLine() {
+  public String getAttributeValue(String attr) {
+    return overrides.get(attr);
+  }
 
-    // The error logger fields should be defined in logback.xml using the following pattern:
-    //   %d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}|%mdc{RequestId}|%thread|<AppName>|%mdc{PartnerName}|%logger||%.-5level|%msg%n"     
-    return logCode + "|" +                                    // 9  error code
-           message + "|" +                                    // 10 log message
-           "";                                                // 11 extra details
-
+  public boolean hasOverride(String attr) {
+    return overrides.containsKey(attr);
   }
 }

@@ -20,7 +20,7 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.api;
+package org.onap.aai.cl.api;
 
 import java.util.HashMap;
 import java.util.Map;

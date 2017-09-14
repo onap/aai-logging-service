@@ -20,18 +20,18 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
 import com.att.eelf.configuration.EELFLogger;
 import com.att.eelf.configuration.EELFLogger.Level;
 import com.att.eelf.i18n.EELFResolvableErrorEnum;
 import com.att.eelf.i18n.EELFResourceManager;
 
-import org.openecomp.cl.api.LogFields;
-import org.openecomp.cl.api.LogLine;
-import org.openecomp.cl.api.LogLine.LogLineType;
-import org.openecomp.cl.api.Logger;
-import org.openecomp.cl.mdc.MdcOverride;
+import org.onap.aai.cl.api.LogFields;
+import org.onap.aai.cl.api.LogLine;
+import org.onap.aai.cl.api.Logger;
+import org.onap.aai.cl.api.LogLine.LogLineType;
+import org.onap.aai.cl.mdc.MdcOverride;
 
 import java.util.HashMap;
 import java.util.Map;

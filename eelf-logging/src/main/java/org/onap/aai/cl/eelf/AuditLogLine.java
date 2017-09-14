@@ -20,10 +20,10 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
-import org.openecomp.cl.api.LogLine;
-import org.openecomp.cl.mdc.MdcContext;
+import org.onap.aai.cl.api.LogLine;
+import org.onap.aai.cl.mdc.MdcContext;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,12 +31,14 @@ import java.util.Date;
 
 /** This class is used to help standardize how log lines are written and provide
  * profiling info. */
-public class MetricsLogLine extends LogLine {
+public class AuditLogLine extends LogLine {
 
-  /** Return the log line based on what we have so far. */
+  /** (non-Javadoc)
+   *  @see org.onap.aai.cl.api.LogLine#getFormattedLine()
+   */
   public String getFormattedLine() {
 
-    // Calculate start/end/elapsed times
+    // calculate start/end/elapsed times
     Date currentDateTime = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
     String startTimeString = getMdcValue(MdcContext.MDC_START_TIME);
@@ -59,27 +61,23 @@ public class MetricsLogLine extends LogLine {
         getMdcValue(MdcContext.MDC_SERVER_FQDN) + "|" +         // 6 physical/virtual server name
         getMdcValue(MdcContext.MDC_SERVICE_NAME) + "|" +        // 7 service name
         getMdcValue(MdcContext.MDC_PARTNER_NAME) + "|" +        // 8 partner name
-        fieldValue(DefinedFields.TARGET_ENTITY) + "|" +         // 9 target entity
-        fieldValue(DefinedFields.TARGET_SVC_NAME) + "|" +       // 10 target service
-        fieldValue(DefinedFields.STATUS_CODE) + "|" +           // 11 status code
-        fieldValue(DefinedFields.RESPONSE_CODE) + "|" +         // 12 response code
-        fieldValue(DefinedFields.RESPONSE_DESCRIPTION) + "|" +  // 13 response description
-        fieldValue(DefinedFields.INSTANCE_UUID) + "|" +         // 14 instance UUID
-        level + "|" +                                           // 15 log level
-        fieldValue(DefinedFields.SEVERITY) + "|" +              // 16 log severity
-        fieldValue(DefinedFields.SERVER_IP) + "|" +             // 17 server ip
-        elapsedTimeString + "|" +                               // 18 elapsed time
-        getMdcValue(MdcContext.MDC_SERVER_FQDN) + "|" +         // 19 server name
-        fieldValue(DefinedFields.CLIENT_IP) + "|" +             // 20 client ip address
-        fieldValue(DefinedFields.CLASS_NAME) + "|" +            // 21 class name
-        "" + "|" +                                              // 22 deprecated
-        fieldValue(DefinedFields.PROCESS_KEY) + "|" +           // 23 process key
-        fieldValue(DefinedFields.TARGET_ENTITY) + "|" +         // 24 target virtual entity
-        fieldValue(DefinedFields.CUSTOM_1) + "|" +              // 25 custom 1
-        fieldValue(DefinedFields.CUSTOM_2) + "|" +              // 26 custom 2
-        fieldValue(DefinedFields.CUSTOM_3) + "|" +              // 27 custom 3
-        fieldValue(DefinedFields.CUSTOM_4) + "|" +              // 28 custom 4
-        message;                                                // 29 detail message
+        fieldValue(DefinedFields.STATUS_CODE) + "|" +           // 9 status code
+        fieldValue(DefinedFields.RESPONSE_CODE) + "|" +         // 10 response code
+        fieldValue(DefinedFields.RESPONSE_DESCRIPTION) + "|" +  // 11 response description
+        fieldValue(DefinedFields.INSTANCE_UUID) + "|" +         // 12 instance UUID
+        level + "|" +                                           // 13 log level
+        fieldValue(DefinedFields.SEVERITY) + "|" +              // 14 log severity
+        fieldValue(DefinedFields.SERVER_IP) + "|" +             // 15 server ip
+        elapsedTimeString + "|" +                               // 16 elapsed time
+        getMdcValue(MdcContext.MDC_SERVER_FQDN) + "|" +         // 17 server name
+        getMdcValue(MdcContext.MDC_CLIENT_ADDRESS) + "|" +      // 18 client ip address
+        fieldValue(DefinedFields.CLASS_NAME) + "|" +            // 19 class name
+        "" + "|" +                                              // 20 deprecated
+        fieldValue(DefinedFields.PROCESS_KEY) + "|" +           // 21 process key
+        fieldValue(DefinedFields.CUSTOM_1) + "|" +              // 22 custom 1
+        fieldValue(DefinedFields.CUSTOM_2) + "|" +              // 23 custom 2
+        fieldValue(DefinedFields.CUSTOM_3) + "|" +              // 24 custom 3
+        fieldValue(DefinedFields.CUSTOM_4) + "|" +              // 25 custom 4
+        message;                                                // 26 details
   }
-
 }

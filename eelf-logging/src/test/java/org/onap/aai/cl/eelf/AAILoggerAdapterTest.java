@@ -19,7 +19,7 @@
  * ============LICENSE_END=========================================================
  */
 
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
 import static org.junit.Assert.*;
 
@@ -27,13 +27,13 @@ import java.util.Locale;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openecomp.cl.eelf.AaiLoggerAdapter;
-import org.openecomp.cl.api.LogFields;
-import org.openecomp.cl.api.LogLine;
-import org.openecomp.cl.api.LogLine.DefinedFields;
-import org.openecomp.cl.api.LogLine.LogLineType;
-import org.openecomp.cl.mdc.MdcContext;
-import org.openecomp.cl.mdc.MdcOverride;
+import org.onap.aai.cl.api.LogFields;
+import org.onap.aai.cl.api.LogLine;
+import org.onap.aai.cl.api.LogLine.DefinedFields;
+import org.onap.aai.cl.api.LogLine.LogLineType;
+import org.onap.aai.cl.eelf.AaiLoggerAdapter;
+import org.onap.aai.cl.mdc.MdcContext;
+import org.onap.aai.cl.mdc.MdcOverride;
 
 import com.att.eelf.configuration.EELFLogger;
 import com.att.eelf.i18n.EELFResolvableErrorEnum;

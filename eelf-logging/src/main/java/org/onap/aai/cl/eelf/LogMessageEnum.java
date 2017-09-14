@@ -20,27 +20,14 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.mdc;
+package org.onap.aai.cl.eelf;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.att.eelf.i18n.EELFResolvableErrorEnum;
+import com.att.eelf.i18n.EELFResourceManager;
 
-/**
- * This class stores a map of MDC context attribute/values which can be used to
- * override the actual MDC context.
- */
-public class MdcOverride {
-  private Map<String, String> overrides = new HashMap<String, String>();
+/** This is a placeholder which client-specific message key enumerations should
+ * implement in order to tie into the log template functionality of the EELF
+ * framework. */
+public interface LogMessageEnum extends EELFResolvableErrorEnum {
 
-  public void addAttribute(String attr, String val) {
-    overrides.put(attr, val);
-  }
-
-  public String getAttributeValue(String attr) {
-    return overrides.get(attr);
-  }
-
-  public boolean hasOverride(String attr) {
-    return overrides.containsKey(attr);
-  }
 }

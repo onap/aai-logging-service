@@ -20,14 +20,25 @@
  *
  * ECOMP is a trademark and service mark of AT&T Intellectual Property.
  */
-package org.openecomp.cl.eelf;
+package org.onap.aai.cl.eelf;
 
-import com.att.eelf.i18n.EELFResolvableErrorEnum;
-import com.att.eelf.i18n.EELFResourceManager;
+import org.onap.aai.cl.api.LogLine;
 
-/** This is a placeholder which client-specific message key enumerations should
- * implement in order to tie into the log template functionality of the EELF
- * framework. */
-public interface LogMessageEnum extends EELFResolvableErrorEnum {
 
+/** This class is used to help standardize how log lines are written and provide
+ * profiling info. */
+public class ErrorLogLine extends LogLine {
+
+  /** (non-Javadoc)
+   * @see org.onap.aai.cl.api.LogLine#getFormattedLine()
+   */
+  public String getFormattedLine() {
+
+    // The error logger fields should be defined in logback.xml using the following pattern:
+    //   %d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX}|%mdc{RequestId}|%thread|<AppName>|%mdc{PartnerName}|%logger||%.-5level|%msg%n"     
+    return logCode + "|" +                                    // 9  error code
+           message + "|" +                                    // 10 log message
+           "";                                                // 11 extra details
+
+  }
 }
