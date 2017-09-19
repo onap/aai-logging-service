@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Steven Blimkie <Steven.Blimkie@amdocs.com>
+Submitted-by: Steven Blimkie <Steven.Blimkie@amdocs.com>
+Submitted-at: Tue, 19 Sep 2017 17:28:30 +0000
+Reviewed-on: http://gerrit.onap.org/r/13537
+Project: aai/logging-service
+Branch: refs/heads/master
