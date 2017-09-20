@@ -17,7 +17,7 @@
 	<artifactId>logging-service</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0</version>
-	<name>Common Logging Library</name>
+	<name>aai-logging-service</name>
 
 	<properties>
 		<checkstyle.config.location>google_checks.xml</checkstyle.config.location>
