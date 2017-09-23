@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_a0c9b65a",
+        "filename": "eelf-logging/src/main/java/org/onap/aai/cl/eelf/AaiLoggerAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2079
+      },
+      "writtenOn": "2017-09-23T11:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a437d4f_71fe06b0",
+      "revId": "17af5fd26dd2b4c6ddc52bb7fd68cccf0161e28a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_11dc5a45",
         "filename": "eelf-logging/src/test/java/org/onap/aai/cl/eelf/AAILoggerAdapterTest.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-09-22T15:05:47Z",
       "side": 1,
       "message": "firstArg and secondArg method variables should be made private static final at the class level, since they are repeatedly set with the same values in multiple places in the code.",
+      "revId": "17af5fd26dd2b4c6ddc52bb7fd68cccf0161e28a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_80c23232",
+        "filename": "eelf-logging/src/test/java/org/onap/aai/cl/eelf/AAILoggerAdapterTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2079
+      },
+      "writtenOn": "2017-09-23T11:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a437d4f_11dc5a45",
       "revId": "17af5fd26dd2b4c6ddc52bb7fd68cccf0161e28a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
