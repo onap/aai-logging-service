@@ -11,7 +11,7 @@
 	<artifactId>logging-service</artifactId>
 	<packaging>pom</packaging>
 	<version>1.1.1-SNAPSHOT</version>
-	<name>aai-logging-service</name>
+	<name>aai-logging-service - amsterdam</name>
 
 	<properties>
 		<checkstyle.config.location>google_checks.xml</checkstyle.config.location>
