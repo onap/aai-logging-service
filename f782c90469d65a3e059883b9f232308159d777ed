@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a93c517_ac604bd0",
+        "filename": "logging-api/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 453
+      },
+      "writtenOn": "2018-03-19T17:40:01Z",
+      "side": 1,
+      "message": "Can you explain the reason for upgrading to this version?  \n\nThe AJSC (which is used as the container for many of our services) includes a number of libraries by default, and as a necessity, we are sometimes forced to use versions of libraries which match those included by AJSC.  \n\nI don\u0027t know off-hand if this is one of those libraries, but I want to make sure there is a good reason for changing the version given the potential risk that it could break some of our AJSC-based services which make use of the logging library.",
+      "revId": "f782c90469d65a3e059883b9f232308159d777ed",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
