@@ -30,7 +30,7 @@ limitations under the License.
 	<groupId>org.onap.aai.logging-service</groupId>
 	<artifactId>logging-service</artifactId>
 	<packaging>pom</packaging>
-	<version>1.5.1-SNAPSHOT</version>
+	<version>1.6.0-SNAPSHOT</version>
 	<name>aai-logging-service</name>
 
 	<properties>
