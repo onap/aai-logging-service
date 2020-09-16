@@ -22,7 +22,7 @@
 # Common Logging Library
 
 The common logging library provides a single library that can be used by any microservice to produce logs.  
-An abstraction layer is provided which exposes a public API to the microservices and shields them from the underlying implementation.
+A provided abstraction layer exposes a public API to the microservices and shields them from the underlying implementation.
 
 The current version of the library is backed by an implementation which wraps the EELF Logging framework, however, the intent is that other logging implementations could be substituted in the future without impacting the public API used by the microservice clients.
 
