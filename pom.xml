@@ -43,6 +43,8 @@ limitations under the License.
 		<sonar.jacoco.reportMissing.force.zero>false</sonar.jacoco.reportMissing.force.zero>
 		<sonar.projectVersion>${project.version}</sonar.projectVersion>
 		<sitePath>/content/sites/site/org/onap/aai/${project.artifactId}/${project.version}</sitePath>
+		<sonar.scanner.version>3.7.0.1746</sonar.scanner.version>
+		<sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 
 
@@ -116,7 +118,7 @@ limitations under the License.
 			<plugin>
 			  <groupId>org.codehaus.mojo</groupId>
 			  <artifactId>sonar-maven-plugin</artifactId>
-			  <version>3.2</version>
+			  <version>${sonar.scanner.version}</version>
 			</plugin>
 			<plugin>
 			  <groupId>org.jacoco</groupId>
