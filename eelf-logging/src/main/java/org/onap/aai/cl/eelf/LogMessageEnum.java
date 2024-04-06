@@ -20,12 +20,11 @@
  */
 package org.onap.aai.cl.eelf;
 
-import com.att.eelf.i18n.EELFResolvableErrorEnum;
-import com.att.eelf.i18n.EELFResourceManager;
+import com.att.eelf.i18n.EELFResolvableResourceEnum;
 
 /** This is a placeholder which client-specific message key enumerations should
  * implement in order to tie into the log template functionality of the EELF
  * framework. */
-public interface LogMessageEnum extends EELFResolvableErrorEnum {
+public interface LogMessageEnum extends EELFResolvableResourceEnum {
 
 }

@@ -25,7 +25,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.att.eelf.configuration.EELFLogger;
-import com.att.eelf.i18n.EELFResolvableErrorEnum;
+import com.att.eelf.i18n.EELFResolvableResourceEnum;
+
 import java.util.Locale;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +36,7 @@ import org.onap.aai.cl.api.LogLine.DefinedFields;
 import org.onap.aai.cl.api.LogLine.LogLineType;
 import org.onap.aai.cl.mdc.MdcContext;
 import org.onap.aai.cl.mdc.MdcOverride;
+import org.slf4j.Marker;
 
 /** This suite of tests is intended to validate the functionality of our wrapper
  * around the {@link EELFLogger}. */
@@ -323,31 +325,6 @@ public class AAILoggerAdapterTest {
         }
 
         @Override
-        public void warn(Locale locale, EELFResolvableErrorEnum errorCode, Throwable th,
-            String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void warn(Locale locale, EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void warn(EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void warn(EELFResolvableErrorEnum errorCode, Throwable th, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
         public void debug(String msg) {
             logMessage = msg;
             logLevel = EELFLogger.Level.DEBUG;
@@ -361,31 +338,6 @@ public class AAILoggerAdapterTest {
 
         @Override
         public void debug(String msg, Throwable th) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void debug(Locale locale, EELFResolvableErrorEnum errorCode, Throwable th,
-            String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void debug(Locale locale, EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void debug(EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void debug(EELFResolvableErrorEnum errorCode, Throwable th, String... args) {
             throw new UnsupportedOperationException(
                 "AAILoggerAdapter is not expected to call into this method.");
         }
@@ -409,31 +361,6 @@ public class AAILoggerAdapterTest {
         }
 
         @Override
-        public void trace(Locale locale, EELFResolvableErrorEnum errorCode, Throwable th,
-            String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void trace(Locale locale, EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void trace(EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void trace(EELFResolvableErrorEnum errorCode, Throwable th, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
         public void info(String msg) {
             logMessage = msg;
             logLevel = EELFLogger.Level.INFO;
@@ -441,31 +368,6 @@ public class AAILoggerAdapterTest {
 
         @Override
         public void info(String msg, Object... arguments) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void info(Locale locale, EELFResolvableErrorEnum errorCode, Throwable th,
-            String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void info(Locale locale, EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void info(EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void info(EELFResolvableErrorEnum errorCode, Throwable th, String... args) {
             throw new UnsupportedOperationException(
                 "AAILoggerAdapter is not expected to call into this method.");
         }
@@ -484,31 +386,6 @@ public class AAILoggerAdapterTest {
 
         @Override
         public void error(String msg, Throwable th) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void error(Locale locale, EELFResolvableErrorEnum errorCode, Throwable th,
-            String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void error(Locale locale, EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void error(EELFResolvableErrorEnum errorCode, String... args) {
-            throw new UnsupportedOperationException(
-                "AAILoggerAdapter is not expected to call into this method.");
-        }
-
-        @Override
-        public void error(EELFResolvableErrorEnum errorCode, Throwable th, String... args) {
             throw new UnsupportedOperationException(
                 "AAILoggerAdapter is not expected to call into this method.");
         }
@@ -806,6 +683,378 @@ public class AAILoggerAdapterTest {
         private String[] tokenizeLogString() {
             System.out.println("\n\n---\n" + logMessage + "\n-------");
             return logMessage.split("\\|");
+        }
+
+        @Override
+        public String getName() {
+
+            throw new UnsupportedOperationException("Unimplemented method 'getName'");
+        }
+
+        @Override
+        public void trace(String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void trace(String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public boolean isTraceEnabled(Marker marker) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'isTraceEnabled'");
+        }
+
+        @Override
+        public void trace(Marker marker, String msg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void trace(Marker marker, String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void trace(Marker marker, String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void trace(Marker marker, String format, Object... argArray) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void trace(Marker marker, String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void debug(String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void debug(String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public boolean isDebugEnabled(Marker marker) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'isDebugEnabled'");
+        }
+
+        @Override
+        public void debug(Marker marker, String msg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void debug(Marker marker, String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void debug(Marker marker, String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void debug(Marker marker, String format, Object... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void debug(Marker marker, String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void info(String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public boolean isInfoEnabled(Marker marker) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'isInfoEnabled'");
+        }
+
+        @Override
+        public void info(Marker marker, String msg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(Marker marker, String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(Marker marker, String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(Marker marker, String format, Object... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void info(Marker marker, String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void warn(String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void warn(String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public boolean isWarnEnabled(Marker marker) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'isWarnEnabled'");
+        }
+
+        @Override
+        public void warn(Marker marker, String msg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void warn(Marker marker, String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void warn(Marker marker, String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void warn(Marker marker, String format, Object... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void warn(Marker marker, String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void error(String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void error(String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public boolean isErrorEnabled(Marker marker) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'isErrorEnabled'");
+        }
+
+        @Override
+        public void error(Marker marker, String msg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void error(Marker marker, String format, Object arg) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void error(Marker marker, String format, Object arg1, Object arg2) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void error(Marker marker, String format, Object... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void error(Marker marker, String msg, Throwable t) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void warn(Locale locale, EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void info(Locale locale, EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void debug(Locale locale, EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void error(Locale locale, EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void trace(Locale locale, EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void warn(Locale locale, EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void info(Locale locale, EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void debug(Locale locale, EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void error(Locale locale, EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void trace(Locale locale, EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void warn(EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void info(EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void debug(EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void error(EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void trace(EELFResolvableResourceEnum resource, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
+        }
+
+        @Override
+        public void warn(EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'warn'");
+        }
+
+        @Override
+        public void info(EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'info'");
+        }
+
+        @Override
+        public void debug(EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'debug'");
+        }
+
+        @Override
+        public void error(EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'error'");
+        }
+
+        @Override
+        public void trace(EELFResolvableResourceEnum resource, Throwable th, String... arguments) {
+
+            throw new UnsupportedOperationException("Unimplemented method 'trace'");
         }
     }
 }

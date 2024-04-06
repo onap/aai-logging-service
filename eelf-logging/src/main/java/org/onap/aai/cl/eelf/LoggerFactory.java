@@ -37,11 +37,6 @@ public class LoggerFactory implements LoggerFactoryInterface {
   /** The instance for our factory singleton. */
   private static LoggerFactory instance;
 
-  /** An instance of the log factory provided by the EELF framework. We will use
-   * this to get an actual EELF logger instance that we will wrap within our
-   * own, more generalized logger. */
-  private EELFManager eelfManager;
-
   /** This cache maintains a mapping of logger names to instances so that if a
    * logger with the same name is requested multiple times we can return the
    * same instance each time. */
@@ -76,12 +71,6 @@ public class LoggerFactory implements LoggerFactoryInterface {
    */
   protected LoggerFactory() {
 
-    // We need an instance of the factory provided by the EELF
-    // framework so that we can instantiate the EELF logger that
-    // we will be wrapping, so get one now.
-    if (eelfManager == null) {
-      eelfManager = EELFManager.getInstance();
-    }
   }
 
   /**
@@ -96,7 +85,7 @@ public class LoggerFactory implements LoggerFactoryInterface {
     if (!errorLoggerCache.containsKey(name)) {
 
       // Nothing in the cache, so let's instantiate a logger now.
-      Logger logger = new AaiLoggerAdapter(eelfManager.getLogger(name), LogLineType.ERROR, name);
+      Logger logger = new AaiLoggerAdapter(EELFManager.getLogger(name), LogLineType.ERROR, name);
       errorLoggerCache.put(name, logger);
     }
 
@@ -126,7 +115,7 @@ public class LoggerFactory implements LoggerFactoryInterface {
     if (!auditLoggerCache.containsKey(name)) {
 
       // Nothing in the cache, so let's instantiate a logger now.
-      Logger logger = new AaiLoggerAdapter(eelfManager.getAuditLogger(), LogLineType.AUDIT, name);
+      Logger logger = new AaiLoggerAdapter(EELFManager.getAuditLogger(), LogLineType.AUDIT, name);
       auditLoggerCache.put(name, logger);
     }
 
@@ -156,7 +145,7 @@ public class LoggerFactory implements LoggerFactoryInterface {
     if (!metricLoggerCache.containsKey(name)) {
 
       // Nothing in the cache, so let's instantiate a logger now.
-      Logger logger = new AaiLoggerAdapter(eelfManager.getMetricsLogger(), LogLineType.METRICS,
+      Logger logger = new AaiLoggerAdapter(EELFManager.getMetricsLogger(), LogLineType.METRICS,
           name);
       metricLoggerCache.put(name, logger);
     }

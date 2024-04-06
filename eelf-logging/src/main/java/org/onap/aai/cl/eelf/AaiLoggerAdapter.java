@@ -22,7 +22,7 @@ package org.onap.aai.cl.eelf;
 
 import com.att.eelf.configuration.EELFLogger;
 import com.att.eelf.configuration.EELFLogger.Level;
-import com.att.eelf.i18n.EELFResolvableErrorEnum;
+import com.att.eelf.i18n.EELFResolvableResourceEnum;
 import com.att.eelf.i18n.EELFResourceManager;
 import org.onap.aai.cl.api.LogFields;
 import org.onap.aai.cl.api.LogLine;
@@ -336,7 +336,7 @@ public class AaiLoggerAdapter implements Logger {
 
     @Override
     public String formatMsg(Enum logCode, String... arguments) {
-        return EELFResourceManager.getMessage((EELFResolvableErrorEnum) logCode, arguments);
+        return EELFResourceManager.getMessage((EELFResolvableResourceEnum) logCode, arguments);
     }
 
     private LogLine getLogLine() {
