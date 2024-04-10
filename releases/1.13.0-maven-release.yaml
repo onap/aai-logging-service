@@ -1,0 +1,4 @@
+distribution_type: maven
+log_dir: aai-logging-service-maven-stage-master/1378/
+project: logging-service
+version: 1.13.0

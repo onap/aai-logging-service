@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings/
+.vscode/
 target/
 eelf-logging/debug-logs/
 eelf-logging/logs/
